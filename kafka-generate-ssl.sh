@@ -142,7 +142,7 @@ echo " - A key password, for the key being generated within the keystore. Rememb
 # https://docs.oracle.com/javase/7/docs/api/javax/net/ssl/X509ExtendedTrustManager.html
 
 keytool -keystore $KEYSTORE_WORKING_DIRECTORY/$KEYSTORE_FILENAME \
-  -alias localhost -validity $VALIDITY_IN_DAYS -genkey
+  -alias localhost -validity $VALIDITY_IN_DAYS -genkey -keyalg RSA
 
 echo
 echo "'$KEYSTORE_WORKING_DIRECTORY/$KEYSTORE_FILENAME' now contains a key pair and a"
