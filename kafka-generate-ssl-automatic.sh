@@ -12,12 +12,12 @@ KEYSTORE_SIGN_REQUEST="cert-file"
 KEYSTORE_SIGN_REQUEST_SRL="ca-cert.srl"
 KEYSTORE_SIGNED_CERT="cert-signed"
 
-COUNTRY="your_country"
-STATE="your_state"
-OU="your_organization_unit"
+COUNTRY=$COUNTRY
+STATE=$STATE
+OU=$ORGANIZATION_UNIT
 CN=`hostname -f`
-LOCATION="your_city"
-PASS="your_password"
+LOCATION=$CITY
+PASS=$PASSWORD
 
 function file_exists_and_exit() {
   echo "'$1' cannot exist. Move or delete it before"
