@@ -39,7 +39,7 @@ if [ -e "$KEYSTORE_SIGNED_CERT" ]; then
 fi
 
 echo
-echo "Welcome to the Kafka SSL keystore and trusttore generator script."
+echo "Welcome to the Kafka SSL keystore and trust store generator script."
 
 echo
 echo "First, do you need to generate a trust store and associated private key,"
