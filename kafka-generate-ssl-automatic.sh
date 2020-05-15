@@ -45,7 +45,7 @@ if [ -e "$KEYSTORE_SIGNED_CERT" ]; then
   file_exists_and_exit $KEYSTORE_SIGNED_CERT
 fi
 
-echo "Welcome to the Kafka SSL keystore and trusttore generator script."
+echo "Welcome to the Kafka SSL keystore and trust store generator script."
 
 trust_store_file=""
 trust_store_private_key_file=""
