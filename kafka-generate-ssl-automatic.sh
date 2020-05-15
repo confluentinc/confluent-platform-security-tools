@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -eu
 
 KEYSTORE_FILENAME="kafka.keystore.jks"
 VALIDITY_IN_DAYS=3650
