@@ -68,7 +68,7 @@ if [ "$generate_trust_store" == "y" ]; then
   echo " - NOTE that the Common Name (CN) is currently not important."
 
   openssl req -new -x509 -keyout $TRUSTSTORE_WORKING_DIRECTORY/ca-key \
-    -out $TRUSTSTORE_WORKING_DIRECTORY/ca-cert -days $VALIDITY_IN_DAYS
+    -out $TRUSTSTORE_WORKING_DIRECTORY/$CA_CERT_FILE -days $VALIDITY_IN_DAYS
 
   trust_store_private_key_file="$TRUSTSTORE_WORKING_DIRECTORY/ca-key"
 
@@ -76,7 +76,7 @@ if [ "$generate_trust_store" == "y" ]; then
   echo "Two files were created:"
   echo " - $TRUSTSTORE_WORKING_DIRECTORY/ca-key -- the private key used later to"
   echo "   sign certificates"
-  echo " - $TRUSTSTORE_WORKING_DIRECTORY/ca-cert -- the certificate that will be"
+  echo " - $TRUSTSTORE_WORKING_DIRECTORY/$CA_CERT_FILE -- the certificate that will be"
   echo "   stored in the trust store in a moment and serve as the certificate"
   echo "   authority (CA). Once this certificate has been stored in the trust"
   echo "   store, it will be deleted. It can be retrieved from the trust store via:"
@@ -90,7 +90,7 @@ if [ "$generate_trust_store" == "y" ]; then
   echo " - a confirmation that you want to import the certificate"
 
   keytool -keystore $TRUSTSTORE_WORKING_DIRECTORY/$DEFAULT_TRUSTSTORE_FILENAME \
-    -alias CARoot -import -file $TRUSTSTORE_WORKING_DIRECTORY/ca-cert
+    -alias CARoot -import -file $TRUSTSTORE_WORKING_DIRECTORY/$CA_CERT_FILE
 
   trust_store_file="$TRUSTSTORE_WORKING_DIRECTORY/$DEFAULT_TRUSTSTORE_FILENAME"
 
